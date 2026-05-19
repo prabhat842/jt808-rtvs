@@ -52,6 +52,16 @@ public final class MediaSessionRegistry {
         return new ArrayList<>(sessions.values());
     }
 
+    public synchronized long frames(String terminalId, int channelId) {
+        MediaSession s = sessions.get(key(terminalId, channelId));
+        return s != null ? s.frames() : 0;
+    }
+
+    public synchronized long bytes(String terminalId, int channelId) {
+        MediaSession s = sessions.get(key(terminalId, channelId));
+        return s != null ? s.bytes() : 0;
+    }
+
     private static String key(String terminalId, int channelId) {
         return terminalId + "#" + channelId;
     }

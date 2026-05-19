@@ -1,7 +1,17 @@
 (function () {
-  const status = document.getElementById('status');
-  if (status) {
-    status.textContent = 'RTVS source tree is present.';
-  }
-})();
+  class RtvsStudioApp {
+    constructor() {
+      this.statusEl = document.getElementById('status');
+    }
 
+    bootstrap() {
+      if (this.statusEl) {
+        this.statusEl.textContent = 'RTVS source tree is present.';
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    new RtvsStudioApp().bootstrap();
+  });
+})();

@@ -20,4 +20,5 @@ This repository is intentionally separate from the JT808 device simulator and th
 
 - `docs/` design and run notes
 - `src/` service and UI implementation
-
+- `src/main/resources/rtvs/app.ts` TypeScript browser source
+- `src/main/resources/rtvs/app.js` checked-in browser output for serving
